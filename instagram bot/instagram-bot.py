@@ -32,22 +32,16 @@ sleep(1)
 username_input = browser.find_element_by_css_selector("input[name='username']")
 password_input = browser.find_element_by_css_selector("input[name='password']")
 
-
 username_input.send_keys(username)
 password_input.send_keys(password)
-
 
 login_btn = browser.find_element_by_xpath("//button[@type='submit']")
 login_btn.click()
 
 sleep(0.5)
 
-
 notnow_btn = browser.find_element_by_xpath("//button[text()='Not now']")
 notnow_btn.click()
-
-
-
   
 sleep(0.5)
 
@@ -63,15 +57,12 @@ sleep(0.5)
 posts = browser.find_elements_by_css_selector("a[href*='/p/']")
 links = [elem.get_attribute('href') for elem in posts]
 
-
-
 for link in links:
     random_time_addon = random.random()
 
     browser.get(link)
     sleep(1)
 
-   
     like_btn = browser.find_element_by_css_selector(".fr66n .wpO6b")
     like_btn.click()
     sleep(1)
@@ -88,7 +79,4 @@ for link in links:
     submit_comment.click()
     sleep(3)
 
-
-
 #browser.close()
-
